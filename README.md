@@ -11,7 +11,7 @@ Idea is to write the compiler by hand, following the book, no AI/LLMs are used i
 
 ## References
 
-"New KornShell Command and Programming Language" by David G. Korn and Morris I. Bolsky
+"New KornShell Command and Programming Language" by David G. Korn and Morris I. Bolsky  
 "Expert C Programming - Deep C Secrets" by Peter van der Linden
 
 
