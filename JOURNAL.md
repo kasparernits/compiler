@@ -2,6 +2,10 @@
 
 Documenting the process of writing my C compiler.  
 
+### June 20, 2026
+
+Lexer requires proper understanding of regular expressions so started reading "Mastering Regular Expresssions". Two books to read before pickig up the compiler book again. Got a full list of Englsh words and full works of Shakespeare to pracice RegEx.
+
 ### June 14, 2026
 
 Got the book from eBay, reading Chapter 1.  
