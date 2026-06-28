@@ -11,8 +11,9 @@ STANDARD GLOBBING
 ```
 *
 ```		
-any string of characters	
-file*.txt matches file.txt, file1.txt
+any string of characters  
+
+`file*.txt` matches file.txt, file1.txt
 
 ```
 ?
