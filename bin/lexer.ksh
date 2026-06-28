@@ -5,34 +5,81 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-typeset -a tokens
+set -A tokens
 idx=0
 
-#tokens[0]="cats"
-#echo ${tokens[0]}
-
 while read -r line || [[ -n $line ]]; do
-
-	while [[ $line == [[:space:]]* ]]; do
-        line="${line#?}"
-    done
+    # Strip leading spaces using regex (\s* matches zero or more spaces)
+    if [[ $line =~ ^[[:space:]]+ ]]; then
+        line="${line#${.sh.match[0]}}"
+    fi
 
     while [[ -n $line ]]; do
-		echo $line
-	done
+        
+        # 1. Keywords (Word boundary \b ensures 'int_var' isn't matched as 'int')
+        if [[ $line =~ ^(int|char|return|if|else|void)\b ]]; then
+            token="${.sh.match[0]}"
+            tokens[$idx]="KEYWORD:$token"
+            ((idx++))
+            line="${line#$token}"
 
-	#while [[ $line == [[:space:]]* ]]; do
-    #	line="${line#?}"
-    #done
-done < $1
+        # 2. Identifiers (Starts with letter/underscore, followed by letters/digits/underscores)
+        elif [[ $line =~ ^[a-zA-Z_][a-zA-Z0-9_]* ]]; then
+            token="${.sh.match[0]}"
+            tokens[$idx]="ID:$token"
+            ((idx++))
+            line="${line#$token}"
 
+        # 3. Numbers & Suffix Error Check
+        elif [[ $line =~ ^[0-9]+ ]]; then
+            token="${.sh.match[0]}"
+            rest="${line#$token}"
+            
+            # Lookahead check: If a number is immediately followed by an identifier character
+            if [[ $rest =~ ^[a-zA-Z_] ]]; then
+                # Grab the bad suffix to print a great error message
+                [[ $rest =~ ^[a-zA-Z_]+ ]]
+                print -u2 "Lexer error: Invalid identifier or suffix near '$token${.sh.match[0]}'"
+                exit 1
+            fi
+            
+            tokens[$idx]="NUM:$token"
+            ((idx++))
+            line="$rest"
 
-# While input isnt empty
-# If input starts with whitespace
-	# Trim whitespace from start of input
-# Else
-	# Find longest match at start of input for any match in the known regex table
-	# If no match is found, raise error
-	# Convert match intto token
-	# Remove match from start of input
+        # 4. Multi-character Operators (==, !=, <=, >=)
+        elif [[ $line =~ ^(==|!=|<=|>=) ]]; then
+            token="${.sh.match[0]}"
+            tokens[$idx]="OP:$token"
+            ((idx++))
+            line="${line#$token}"
 
+        # 5. Single-character Symbols 
+        # (We must escape special regex characters like +, -, *, / with backslashes)
+        elif [[ $line =~ ^([\+\-\*\/\=\;\{\}\(\)]) ]]; then
+            token="${.sh.match[0]}"
+            tokens[$idx]="SYM:$token"
+            ((idx++))
+            line="${line#$token}"
+
+        # 6. Fallback Error Handler
+        else
+            # Grab just the first character using regex dot .
+            [[ $line =~ ^. ]]
+            print -u2 "Lexer error: Unexpected character '${.sh.match[0]}'"
+            exit 1
+        fi
+
+        # Strip trailing spaces between tokens
+        if [[ $line =~ ^[[:space:]]+ ]]; then
+            line="${line#${.sh.match[0]}}"
+        fi
+    done
+done < "$1"
+
+# Print out the results
+i=0
+while [[ $i -lt idx ]]; do
+    print "${tokens[$i]}"
+    ((i++))
+done
