@@ -1,10 +1,11 @@
-# JOURNAL
+Journal
 
 Documenting the process of writing my C compiler.  
 
 June 28, 2026
 
-Confused about different types of patten matching that can be done. Globbing and extended globbing are designed for file name matching so I am going to use extended regex for the lexer. 
+Confused about different types of patten matching that can be done. 
+Globbing and extended globbing are designed for file name matching so I am going to use extended regex for the lexer. 
 
 STANDARD GLOBBING
 
@@ -60,7 +61,10 @@ rm !(*.jpg|*.png) deletes all files except jpg and png images
 
 June 20, 2026
 
-Lexer requires proper understanding of regular expressions so started reading "Mastering Regular Expresssions". Two books to read before pickig up the compiler book again. Got a full list of Englsh words and full works of Shakespeare to practice RegEx.
+Lexer requires proper understanding of regular expressions so started reading "Mastering Regular Expresssions". 
+Two books to read before pickig up the compiler book again. 
+
+Got a full list of Englsh words and full works of Shakespeare to practice RegEx.
 
 June 14, 2026
 
