@@ -77,7 +77,6 @@ while read -r line || [[ -n $line ]]; do
     done
 done < "$1"
 
-# Print out the results
 i=0
 while [[ $i -lt idx ]]; do
     print "${tokens[$i]}"
