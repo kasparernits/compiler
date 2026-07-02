@@ -2,6 +2,12 @@ Journal
 
 Documenting the process of writing my C compiler.  
 
+July 2, 2026
+
+Applying kernel source file style to my scripts.
+
+man 9 style
+
 June 28, 2026
 
 Confused about different types of patten matching that can be done. 
