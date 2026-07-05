@@ -2,6 +2,37 @@ Journal
 
 Documenting the process of writing my C compiler.  
 
+July 4, 2026
+
+Characters in iPad CH Magic Keyboard
+
+| Option 7
+~ Option n
+| Option 7
+\ Option SHIFT 7
+{ Option 8
+} Option 9
+[ Option 5
+] Option 6
+
+July 3, 2026
+
+Vi notes
+
+Find replace in current line
+:s/CATS/DOGS/g
+
+Find replace in entire file
+:%s/CATS/DOGS/g
+
+Visual Mode
+
+Ctrl + v 
+Use j/k keys to select rows
+Shift i to go into enter mode
+Type the charcter
+Esc twice
+
 July 2, 2026
 
 Applying kernel source file style to my scripts.

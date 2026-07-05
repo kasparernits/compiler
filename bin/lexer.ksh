@@ -1,5 +1,7 @@
 #!/usr/local/bin/ksh93
 
+set -euo pipefail
+
 if [[ -z $1 ]]; then
     print -u2 "Usage: $0 file.c"
     exit 1
@@ -10,13 +12,12 @@ idx=0
 
 while read -r line || [[ -n $line ]]; do
 
-	# Strip one or more leading spaces.
+    # Strip one or more leading spaces.
     if [[ $line =~ ^[[:space:]]+ ]]; then
         line="${line#${.sh.match[0]}}"
     fi
 
     while [[ -n $line ]]; do
-        
         # Keywords (word boundary \b ensures 'int_var' isn't matched as 'int').
         if [[ $line =~ ^(int|char|return|if|else|void)\b ]]; then
             token="${.sh.match[0]}"
@@ -38,7 +39,6 @@ while read -r line || [[ -n $line ]]; do
             
             # Lookahead check: If a number is immediately followed by an identifier character.
             if [[ $rest =~ ^[a-zA-Z_] ]]; then
-                # Grab the bad suffix to print a great error message
                 [[ $rest =~ ^[a-zA-Z_]+ ]]
                 print -u2 "Lexer error: Invalid identifier or suffix near '$token${.sh.match[0]}'"
                 exit 1
@@ -67,7 +67,7 @@ while read -r line || [[ -n $line ]]; do
         else
             # Grab just the first character using regex dot.
             [[ $line =~ ^. ]]
-            print -u2 "Lexer error: Unexpected character '${.sh.match[0]}'"
+            #print -u2 "Lexer error: Unexpected character '${.sh.match[0]}'"
             exit 1
         fi
 
@@ -78,8 +78,9 @@ while read -r line || [[ -n $line ]]; do
     done
 done < "$1"
 
-i=0
-while [[ $i -lt idx ]]; do
-    print "${tokens[$i]}"
-    ((i++))
-done
+#i=0
+#while [[ $i -lt idx ]]; do
+#    print "${tokens[$i]}"
+#    ((i++))
+#done
+
