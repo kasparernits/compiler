@@ -4,16 +4,17 @@ Documenting the process of writing my C compiler.
 
 July 4, 2026
 
-Characters in iPad CH Magic Keyboard
+Using iPad pro as a "dumb terminal" with ShellFish client and OpenBSD server works really well.
 
-| Option 7
-~ Option n
-| Option 7
-\ Option SHIFT 7
-{ Option 8
-} Option 9
+Special characters in iPad CH Magic Keyboard.
+
 [ Option 5
 ] Option 6
+| Option 7
+{ Option 8
+} Option 9
+~ Option n
+\ Option SHIFT 7
 
 July 3, 2026
 
