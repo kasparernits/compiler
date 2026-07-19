@@ -63,29 +63,15 @@ Globbing and extended globbing are designed for file name matching so I am going
 STANDARD GLOBBING
 
 ```
-'*' any string of characters
+'*' any string of characters; $ 'file*.txt' matches file.txt, file1.txt
 ```
 
 ```
-'file*.txt' matches file.txt, file1.txt
+'?' exactly one character; $ 'image?.png' matches image1.png, imageA.png
 ```
 
 ```
-'?' exactly one character
-```
-
-```
-'image?.png' matches image1.png, imageA.png
-```
-
-```
-[...]
-```
-
-any one character, including ranges  
-
-```
-'log_[0-9].txt' matches log_0.txt, log_1.txt
+[...] any one character, including ranges; $  'log_[0-9].txt' matches log_0.txt, log_1.txt
 ```
 
 ```
