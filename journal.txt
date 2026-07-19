@@ -2,6 +2,11 @@ Journal
 
 Documenting the process of writing my C compiler.  
 
+July 19, 2026
+
+Struggling with getting the test suite to work with my driver.  
+Reading sed & awk to distract me from fixing the test suite.  
+
 July 4, 2026
 
 Using iPad pro as a "dumb terminal" with ShellFish client and OpenBSD server works really well.
