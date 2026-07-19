@@ -63,23 +63,28 @@ Globbing and extended globbing are designed for file name matching so I am going
 STANDARD GLOBBING
 
 ```
-'*' any string of characters; $ 'file*.txt' matches file.txt, file1.txt
+'*' any string of characters  
+'file*.txt' matches file.txt, file1.txt
 ```
 
 ```
-'?' exactly one character; $ 'image?.png' matches image1.png, imageA.png
+'?' exactly one character  
+'image?.png' matches image1.png, imageA.png
 ```
 
 ```
-[...] any one character, including ranges; $  'log_[0-9].txt' matches log_0.txt, log_1.txt
+[...] any one character, including ranges  
+'log_[0-9].txt' matches log_0.txt, log_1.txt
 ```
 
 ```
-[!...] or [^...] matches any one character not enclosed in brackets; $ 'data_[!0-9].csv' matches data_a.csv
+[!...] or [^...] matches any one character not enclosed in brackets  
+'data_[!0-9].csv' matches data_a.csv
 ```
 
 ```
-[:space:], [:digit:], [:lower:], [:upper:], [:alpha:], [:alnum:] POSIX character classes; $ 'file_[[:digit:]].txt' matches file_7.txt
+[:space:], [:digit:], [:lower:], [:upper:], [:alpha:], [:alnum:] POSIX character classes  
+'file_[[:digit:]].txt' matches file_7.txt
 ```
 
 EXTENDED GLOBBING
