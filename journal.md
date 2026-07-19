@@ -2,12 +2,12 @@
 
 Documenting the process of writing my C compiler.  
 
-## July 19, 2026
+### July 19, 2026
 
 Struggling with getting the test suite to work with my driver.  
 Reading sed & awk to distract me from fixing the test suite.  
 
-## July 4, 2026
+### July 4, 2026
 
 Using iPad pro as a "dumb terminal" with ShellFish client and OpenBSD server works really well.
 
@@ -23,31 +23,39 @@ Special characters in iPad CH Magic Keyboard.
 \ Option SHIFT 7
 ```
 
-July 3, 2026
+### July 3, 2026
 
 Vi notes
 
 Find replace in current line
+```
 :s/CATS/DOGS/g
+```
 
 Find replace in entire file
+```
 :%s/CATS/DOGS/g
+```
 
 Visual Mode
 
+```
 Ctrl + v 
 Use j/k keys to select rows
 Shift i to go into enter mode
 Type the charcter
 Esc twice
+```
 
-July 2, 2026
+### July 2, 2026
 
 Applying kernel source file style to my scripts.
 
+```
 man 9 style
+```
 
-June 28, 2026
+### June 28, 2026
 
 Confused about different types of patten matching that can be done. 
 Globbing and extended globbing are designed for file name matching so I am going to use extended regex for the lexer. 
