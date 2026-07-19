@@ -14,13 +14,13 @@ Using iPad pro as a "dumb terminal" with ShellFish client and OpenBSD server wor
 Special characters in iPad CH Magic Keyboard.
 
 ```
-[ Option 5
-] Option 6
-| Option 7
-{ Option 8
-} Option 9
-~ Option n
-\ Option SHIFT 7
+'[' Option 5
+']' Option 6
+'|' Option 7
+'{' Option 8
+'}' Option 9
+'~' Option n
+'\' Option SHIFT 7
 ```
 
 ### July 3, 2026
@@ -62,9 +62,14 @@ Globbing and extended globbing are designed for file name matching so I am going
 
 STANDARD GLOBBING
 
+```
 *
+```
 any string of characters
+
+```
 'file*.txt' matches file.txt, file1.txt
+```
 
 ?
 exactly one character		
