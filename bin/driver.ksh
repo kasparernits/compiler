@@ -2,9 +2,10 @@
 
 COM_HOME=$HOME/compiler
 COM_BIN=$COM_HOME/bin
-COM_SRC=$COM_HOME/src
 
 lexer=$COM_BIN/lexer.ksh
+
+print "calling lexer with $1"
 
 if [[ -z $1 ]]; then
 	print -u2 "Usage $0: file.c"
@@ -22,7 +23,7 @@ if [[ $# -gt 1 ]]; then
 			only_lex=1
 			;;
 		*)
-			print "some unknown option"
+			print "unknown option"
 			;;
 	esac
 fi
@@ -33,17 +34,17 @@ FILE="$(basename $1 .c)"
 
 # -E run the preprocessor stage only
 # -P don't emit linemarkers
-cc -E -P $1 -o $COM_SRC/$FILE.i
+cc -E -P $1 -o $FILE.i
 
 # Lex
 
-$lexer $COM_SRC/$FILE.i
+$lexer $FILE.i
 
 if [[ $? -ne 0 ]]; then
-	rm $COM_SRC/$FILE.i
+	rm $FILE.i
 	exit 1
 else
-	rm $COM_SRC/$FILE.i
+	rm $FILE.i
 	exit 0
 fi
 
