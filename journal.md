@@ -75,22 +75,11 @@ STANDARD GLOBBING
 ```
 
 ```
-[!...] or [^...] 
-```
-matches any one character not enclosed in brackets  
-
-```
-'data_[!0-9].csv' matches data_a.csv
+[!...] or [^...] matches any one character not enclosed in brackets; $ 'data_[!0-9].csv' matches data_a.csv
 ```
 
 ```
-[:space:], [:digit:], [:lower:], [:upper:], [:alpha:], [:alnum:]
-```
-
-POSIX character classes  
-
-```
-'file_[[:digit:]].txt' matches file_7.txt
+[:space:], [:digit:], [:lower:], [:upper:], [:alpha:], [:alnum:] POSIX character classes; $ 'file_[[:digit:]].txt' matches file_7.txt
 ```
 
 EXTENDED GLOBBING
