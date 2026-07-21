@@ -1,0 +1,517 @@
+======================================================================
+FAIL: test_invalid_parse/end_before_expr (test_framework.basic.TestChapter1.test_invalid_parse/end_before_expr)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/end_before_expr.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/extra_junk (test_framework.basic.TestChapter1.test_invalid_parse/extra_junk)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/extra_junk.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/invalid_function_name (test_framework.basic.TestChapter1.test_invalid_parse/invalid_function_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/invalid_function_name.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/keyword_wrong_case (test_framework.basic.TestChapter1.test_invalid_parse/keyword_wrong_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/keyword_wrong_case.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/missing_type (test_framework.basic.TestChapter1.test_invalid_parse/missing_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/missing_type.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/misspelled_keyword (test_framework.basic.TestChapter1.test_invalid_parse/misspelled_keyword)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/misspelled_keyword.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/no_semicolon (test_framework.basic.TestChapter1.test_invalid_parse/no_semicolon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/no_semicolon.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/not_expression (test_framework.basic.TestChapter1.test_invalid_parse/not_expression)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/not_expression.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/space_in_keyword (test_framework.basic.TestChapter1.test_invalid_parse/space_in_keyword)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/space_in_keyword.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/switched_parens (test_framework.basic.TestChapter1.test_invalid_parse/switched_parens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/switched_parens.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/unclosed_brace (test_framework.basic.TestChapter1.test_invalid_parse/unclosed_brace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/unclosed_brace.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_parse/unclosed_paren (test_framework.basic.TestChapter1.test_invalid_parse/unclosed_paren)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/invalid_parse/unclosed_paren.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/multi_digit (test_framework.basic.TestChapter1.test_valid/multi_digit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/multi_digit.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/newlines (test_framework.basic.TestChapter1.test_valid/newlines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/newlines.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/no_newlines (test_framework.basic.TestChapter1.test_valid/no_newlines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/no_newlines.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/return_0 (test_framework.basic.TestChapter1.test_valid/return_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/return_0.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/return_2 (test_framework.basic.TestChapter1.test_valid/return_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/return_2.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/spaces (test_framework.basic.TestChapter1.test_valid/spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/spaces.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+======================================================================
+FAIL: test_valid/tabs (test_framework.basic.TestChapter1.test_valid/tabs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/kas/compiler/test/test_framework/basic.py", line 592, in test_valid
+    self.compile_success(program)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kas/compiler/test/test_framework/basic.py", line 359, in compile_success
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        result.returncode,
+        ^^^^^^^^^^^^^^^^^^
+        0,
+        ^^
+        msg=f"compilation of {source_file} failed with error:\n{result.stderr}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: compilation of /home/kas/compiler/test/tests/chapter_1/valid/tabs.c failed with error:
+basename: unknown option -- -
+usage: basename string [suffix]
+cc: error: unknown argument: '--lex'
+cc: error: no input files
+/home/kas/compiler/bin/lexer.ksh: line 78: .i: cannot open [No such file or directory]
+rm: .i: No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.138s
+
+FAILED (failures=19)

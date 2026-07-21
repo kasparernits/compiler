@@ -2,55 +2,67 @@
 
 COM_HOME=$HOME/compiler
 COM_BIN=$COM_HOME/bin
-
 lexer=$COM_BIN/lexer.ksh
 
-print "calling lexer with $1"
-
-if [[ -z $1 ]]; then
-	print -u2 "Usage $0: file.c"
-	exit 1
-fi
-
 only_lex=0
+target_file=""
 
-# Check what arguments were passed
+# Parse options dynamically
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --lex|--stage)
+            if [[ "$1" == "--stage" ]]; then
+                shift # Skip the argument after --stage if it's "lex"
+            fi
+            only_lex=1
+            shift
+            ;;
+        --chapter)
+            shift 2 # Skip --chapter and its number
+            ;;
+        -*)
+            # Ignore or handle other runner flags safely
+            shift
+            ;;
+        *)
+            target_file="$1"
+            shift
+            ;;
+    esac
+done
 
-if [[ $# -gt 1 ]]; then
-	opt=$2
-	case $opt in 
-		--lex)
-			only_lex=1
-			;;
-		*)
-			print "unknown option"
-			;;
-	esac
+if [[ -z "$target_file" ]]; then
+    print -u2 "Usage: $0 [--lex] file.c"
+    exit 1
 fi
 
-FILE="$(basename $1 .c)"
+# Get the base filename safely
+filename=$(basename "$target_file")
+base_name="${filename%.c}"
+i_file="${base_name}.i"
 
-# Preprocess using clang
-
-# -E run the preprocessor stage only
-# -P don't emit linemarkers
-cc -E -P $1 -o $FILE.i
-
-# Lex
-
-$lexer $FILE.i
-
+# 1. Preprocess using clang (cc)
+cc -E -P "$target_file" -o "$i_file"
 if [[ $? -ne 0 ]]; then
-	rm $FILE.i
-	exit 1
-else
-	rm $FILE.i
-	exit 0
+    rm -f "$i_file"
+    exit 1
 fi
 
-# Compile
-#mv $FILE.i > $FILE.s
+# 2. Lex stage
+$lexer "$i_file"
+lex_status=$?
 
-# Assemble
-#cc $FILE.s -o $FILE
+# Cleanup preprocessed file
+rm -f "$i_file"
+
+if [[ $lex_status -ne 0 ]]; then
+    exit 1
+fi
+
+# If test framework only requested lexing, stop here
+if [[ $only_lex -eq 1 ]]; then
+    exit 0
+fi
+
+# (Future parser/compiler stages go here...)
 
