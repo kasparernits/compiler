@@ -56,9 +56,8 @@ while read -r line || [[ -n $line ]]; do
             line="${line#$token}"
 
         # Single-character Symbols.
-        # (We must escape special regex characters like +, -, *, / with backslashes)
-        elif [[ $line =~ ^([\+\-\*\/\=\;\{\}\(\)]) ]]; then
-            token="${.sh.match[0]}"
+        elif [[ $line =~ ^[-+*/=;{}()] ]]; then
+		    token="${.sh.match[0]}"
             tokens[$idx]="SYM:$token"
             ((idx++))
             line="${line#$token}"
@@ -66,7 +65,7 @@ while read -r line || [[ -n $line ]]; do
         # Fallback Error Handler.
         else
             # Grab just the first character using regex dot.
-            [[ $line =~ ^. ]]
+            [[ $line =~ ^. ]] || [[ $line =~ '\' ]]
             #print -u2 "Lexer error: Unexpected character '${.sh.match[0]}'"
             exit 1
         fi
