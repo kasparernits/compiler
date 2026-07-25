@@ -2,6 +2,10 @@ Journal
 
 Documenting the process of writing my C compiler.  
 
+July 22, 2026
+
+Got the test suite working - arguments passed into the test suite were getting passed into the drive and lexer. Moving on to the parser now.
+
 July 19, 2026
 
 Struggling with getting the test suite to work with my driver.  
