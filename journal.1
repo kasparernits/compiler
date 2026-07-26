@@ -1,0 +1,190 @@
+.\"-
+.\" C Compiler Development Journal
+.\" Formatted using OpenBSD mdoc(7) macros
+.\"-
+.Dd July 26, 2026
+.Dt JOURNAL 1
+.Os OpenBSD
+.Sh NAME
+.Nm journal
+.Nd process log for writing a C compiler.
+.Sh DESCRIPTION
+Documenting the process of writing my C compiler.
+.Sh ENTRIES
+.Ss July 26, 2026
+Converted code to KNF and added a new function to do that.
+Converted the journal into mandoc format like I was back in the AT&T
+Bell Labs.
+.Ss July 22, 2026
+Got the test suite working \(en arguments passed into the test suite were
+getting passed into the driver and lexer.
+Moving on to the parser now.
+.Ss July 19, 2026
+Struggling with getting the test suite to work with my driver.
+Reading
+.Nm sed
+&
+.Nm awk
+to distract me from fixing the test suite.
+.Ss July 4, 2026
+Using iPad Pro as a "dumb terminal" with ShellFish client and OpenBSD server
+works really well.
+.Pp
+Special characters on iPad CH Magic Keyboard:
+.Bl -tag -width "Option SHIFT 7  " -offset indent
+.It Option 5
+[
+.It Option 6
+]
+.It Option 7
+|
+.It Option 8
+{
+.It Option 9
+}
+.It Option n
+~
+.It Option SHIFT 7
+\e
+.El
+.Ss July 3, 2026
+Vi notes.
+.Pp
+Find and replace in current line:
+.Bd -literal -offset indent
+:s/CATS/DOGS/g
+.Ed
+.Pp
+Find and replace in entire file:
+.Bd -literal -offset indent
+:%s/CATS/DOGS/g
+.Ed
+.Pp
+Visual Block Mode procedure:
+.Bl -enum -offset indent
+.It
+Press
+.Ic Ctrl+v .
+.It
+Use
+.Ic j
+and
+.Ic k
+keys to select rows.
+.It
+Press
+.Ic Shift+i
+to enter insert mode.
+.It
+Type the character.
+.It
+Press
+.Ic Esc
+twice.
+.El
+.Ss July 2, 2026
+Applying kernel source file style to my scripts.
+.Pp
+Refer to
+.Xr style 9 .
+.Ss June 28, 2026
+Confused about different types of pattern matching that can be done.
+Globbing and extended globbing are designed for file name matching, so I am going to use extended regex for the lexer.
+.Pp
+.Sy Standard Globbing
+.Bl -tag -width "[:space:], [:digit:]..." -offset indent
+.It Cm *
+Any string of characters.
+.Ql file*.txt
+matches
+.Pa file.txt ,
+.Pa file1.txt .
+.It Cm ?
+Exactly one character.
+.Ql image?.png
+matches
+.Pa image1.png ,
+.Pa imageA.png .
+.It Cm [...]
+Any one character, including ranges.
+.Ql log_[0-9].txt
+matches
+.Pa log_0.txt ,
+.Pa log_1.txt .
+.It Cm [!...] No-space-or Cm [^...]
+Matches any one character not enclosed in brackets.
+.Ql data_[!0-9].csv
+matches
+.Pa data_a.csv .
+.It Cm [:space:] , Cm [:digit:] , Cm [:lower:] , Cm [:upper:] , Cm [:alpha:] , Cm [:alnum:]
+POSIX character classes.
+.Ql file_[[:digit:]].txt
+matches
+.Pa file_7.txt .
+.El
+.Pp
+.Sy Extended Globbing
+.Pp
+Uses a quantifier followed by a list of patterns, separated by OR
+.Ql | .
+.Bl -tag -width "?(pattern-list)" -offset indent
+.It Cm ?(pattern-list)
+Zero or ONE occurrence of patterns.
+.Ql file?(test).txt
+matches
+.Pa file.txt
+and
+.Pa filetest.txt .
+.It Cm *(pattern-list)
+Zero or MORE occurrences of patterns.
+.Ql data*(0).csv
+matches
+.Pa data0.csv
+and
+.Pa data000.csv .
+.It Cm +(pattern-list)
+One or more occurrences.
+.Ql track+(0).mp3
+matches
+.Pa track0.mp3
+but won't match
+.Pa track.mp3 .
+.It Cm @(pattern-list)
+Exactly one of the given patterns.
+.Ql report.@(pdf|txt).doc
+matches
+.Pa report.pdf ,
+.Pa report.txt
+but won't match
+.Pa report.jpg .
+.It Cm !(pattern-list)
+Anything except the given patterns (can be combined).
+.El
+.Pp
+Extended Globbing Examples:
+.Bl -bullet -offset indent
+.It
+.Ql '*([0-9])?(.csv)'
+finds strings that optionally end with .csv (e.g., 123 and 564.csv).
+.It
+.Ql rm '!(*.jpg|*.png)'
+deletes all files except jpg and png images.
+.El
+.Ss June 20, 2026
+Lexer requires proper understanding of regular expressions, so I started reading "Mastering Regular Expressions".
+Two books to read before picking up the compiler book again.
+.Pp
+Got a full list of English words and full works of Shakespeare to practice RegEx.
+.Ss June 14, 2026
+Got the book from eBay, reading Chapter 1.
+Wrote the compiler driver.
+Wrote the lexer using Gemini, decided not to use LLMs, deleted the code, and am starting it from scratch.
+.Ss May 23, 2026
+Installed
+.Nm ksh93
+on my OpenBSD computer for writing the compiler.
+OpenBSD comes with
+.Nm pdksh
+(Public Domain Korn Shell), which lacks features that I need.
+.Ss May 19, 2026
+Got the Korn shell book from eBay, reading that.
