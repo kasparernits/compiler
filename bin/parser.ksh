@@ -1,4 +1,4 @@
-#!/usr/bin/env ksh93
+#!/usr/local/bin/ksh93
 
 # 1. THE DATA: What the lexer actually found in the source file
 set -A TOKENS "int" "main" "(" ")" "{" "return" "2" ";" "}"

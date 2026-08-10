@@ -1,0 +1,3 @@
+$HOME/compiler/test/test_compiler $HOME/compiler/bin/driver.ksh --chapter 1 --stage lex
+
+
