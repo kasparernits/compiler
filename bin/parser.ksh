@@ -1,10 +1,8 @@
 #!/usr/local/bin/ksh93
 
-# 1. THE DATA: What the lexer actually found in the source file
 set -A TOKENS "int" "main" "(" ")" "{" "return" "2" ";" "}"
 integer TOK_IDX=0
 
-# Helper to verify that the DATA matches our RULES
 expect() {
 	typeset expected=$1
 	if [[ ${TOKENS[TOK_IDX]} == "$expected" ]]; then
@@ -15,8 +13,6 @@ expect() {
 		exit 1
 	fi
 }
-
-# 2. THE RULES (The Grammar)
 
 # Grammar: exp -> <int>
 parse_exp() {
@@ -63,16 +59,12 @@ parse_program() {
 	expect "}"
 }
 
-# 3. EXECUTION
 
-# Explicitly declare AST as a compound variable
 typeset -C AST
 
-# Kick off the recursive descent
 parse_program
 
-# 4. TRAVERSAL (Reading the AST)
-print "AST Built Successfully!"
+print "AST Built Successfully"
 print "The returned value is: ${AST}"
 #print "The returned value is: ${AST.body.exp.value}"
 

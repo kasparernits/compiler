@@ -36,33 +36,27 @@ if [[ -z "$target_file" ]]; then
 	exit 1
 fi
 
-# Get the base filename safely
 filename=$(basename "$target_file")
 base_name="${filename%.c}"
 i_file="${base_name}.i"
 
-# 1. Preprocess using clang (cc)
 cc -E -P "$target_file" -o "$i_file"
 if [[ $? -ne 0 ]]; then
 	rm -f "$i_file"
 	exit 1
 fi
 
-# 2. Lex stage
 $lexer "$i_file"
 lex_status=$?
 
-# Cleanup preprocessed file
 rm -f "$i_file"
 
 if [[ $lex_status -ne 0 ]]; then
 	exit 1
 fi
 
-# If test framework only requested lexing, stop here
 if [[ $only_lex -eq 1 ]]; then
 	exit 0
 fi
 
-# (Future parser/compiler stages go here...)
-
+# rest to come ...
